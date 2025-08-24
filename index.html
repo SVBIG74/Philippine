@@ -5,63 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notre trip aux Philippines - Avril 2025</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f8fa; }
-    header { background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat; color:white; padding:100px 20px; text-align:center; }
-    header h1 { font-size:3em; margin:0; }
-    section { padding:50px 20px; max-width:1000px; margin:auto; }
-    h2 { color:#0077b6; margin-bottom:20px; }
-    .timeline { display:grid; grid-template-columns:1fr 2fr; gap:20px; align-items:center; margin-bottom:40px; }
-    .timeline img { width:100%; border-radius:10px; }
-    .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; }
-    .gallery img { width:100%; border-radius:10px; }
-    footer { background:#0077b6; color:white; text-align:center; padding:20px; margin-top:50px; }
-    button { background:#ffb703; border:none; padding:15px 25px; border-radius:8px; font-size:1em; cursor:pointer; }
+    /* Base styles */
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f8fa; font-size:16px; }
+    
+    /* Header */
+    header { 
+      background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+      url('https://upload.wikimedia.org/wikipedia/commons/b/b0/MANILA_SKYLINE_01.JPG') 
+      center/cover no-repeat; 
+      color:white; 
+      padding:60px 15px; 
+      text-align:center; 
+    }
+    header h1 { font-size:2em; margin:0; }
+    
+    /* Sections */
+    section { padding:30px 15px; max-width:100%; margin:auto; }
+    @media (min-width: 768px) {
+      section { max-width:90%; }
+    }
+    @media (min-width: 1024px) {
+      section { max-width:1000px; }
+      header h1 { font-size:3em; }
+    }
+    
+    h2 { color:#0077b6; margin-bottom:20px; font-size:1.5em; }
+    
+    /* Timeline */
+    .timeline { 
+      display:grid; 
+      grid-template-columns:1fr; 
+      gap:15px; 
+      margin-bottom:30px; 
+    }
+    @media (min-width: 768px) {
+      .timeline { grid-template-columns:1fr 2fr; }
+    }
+    .timeline img { width:100%; border-radius:10px; max-height:200px; object-fit:cover; }
+    
+    /* Gallery */
+    .gallery { 
+      display:grid; 
+      grid-template-columns:repeat(2, 1fr); 
+      gap:10px; 
+    }
+    @media (min-width: 768px) {
+      .gallery { grid-template-columns:repeat(3, 1fr); }
+    }
+    .gallery img { width:100%; border-radius:10px; height:150px; object-fit:cover; }
+    
+    /* Footer */
+    footer { background:#0077b6; color:white; text-align:center; padding:20px; margin-top:30px; }
+    
+    /* Buttons */
+    button { 
+      background:#ffb703; 
+      border:none; 
+      padding:12px 20px; 
+      border-radius:8px; 
+      font-size:1em; 
+      cursor:pointer; 
+      width:100%;
+      max-width:300px;
+    }
+    
+    /* Links */
     a { color:#0077b6; text-decoration:none; font-weight:bold; }
     a:hover { text-decoration:underline; }
-    .hotels { background:#e0f7fa; padding:20px; border-radius:10px; margin:40px 0; }
+    
+    /* Hotels */
+    .hotels { 
+      background:#e0f7fa; 
+      padding:15px; 
+      border-radius:10px; 
+      margin:30px 0; 
+    }
     .hotels ul { list-style:none; padding:0; }
-    .hotels li { margin-bottom:20px; }
-    .food-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .food-item { background:white; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); overflow:hidden; }
-    .food-item img { width:100%; height:200px; object-fit:cover; }
+    .hotels li { margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #b2ebf2; }
+    
+    /* Food grid */
+    .food-grid { 
+      display:grid; 
+      grid-template-columns:1fr; 
+      gap:15px; 
+    }
+    @media (min-width: 768px) {
+      .food-grid { grid-template-columns:repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .food-grid { grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); }
+    }
+    .food-item { 
+      background:white; 
+      border-radius:10px; 
+      box-shadow:0 2px 8px rgba(0,0,0,0.1); 
+      overflow:hidden; 
+    }
+    .food-item img { width:100%; height:180px; object-fit:cover; }
     .food-item div { padding:15px; }
+    
+    /* Romance cards */
+    .romance-grid {
+      display: grid; 
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    @media (min-width: 640px) {
+      .romance-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .romance-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    }
+    .romance-card {
+      background: white; 
+      padding: 15px; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .romance-card h3 {
+      margin-top: 0;
+      color: #0077b6;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Notre aventure aux Philippines</h1>
     <p>15 jours entre nature, plongées et plages de rêve 🌴</p>
+    <p><small>Avril 2025</small></p>
   </header>
 
   <section>
-    <h2>�� Itinéraire</h2>
+    <h2>🗺️ Itinéraire</h2>
     <div class="timeline">
-      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Manille">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/MANILA_SKYLINE_01.JPG" alt="Manille skyline" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
       <div>
         <b>Jour 1–2 :</b> Manille – arrivée et découverte. 
         👉 <a href="https://guidetothephilippines.ph/articles/what-to-experience/things-to-do-in-manila" target="_blank">Que faire à Manille ?</a>
       </div>
-
-      <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Donsol requins baleines">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Butanding_Whale_Shark_%28Donsol%2C_Sorsogon%29_%28794278440%29.jpg" alt="Donsol – requin-baleine" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
       <div>
         <b>Jour 3–5 :</b> Donsol – rencontre avec les requins-baleines 🦈 
         👉 <a href="https://www.destinationwildlife.com/field-guides/whale-shark/donsol-philippines" target="_blank">Infos sur l'écotourisme à Donsol</a>
       </div>
-
-      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Palawan lagons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Island_lagoon_in_Bacuit_Bay%2C_El_Nido%2C_Palawan%2C_Philippines.jpg" alt="Palawan – lagon de Bacuit (El Nido)" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
       <div>
         <b>Jour 6–10 :</b> Palawan – lagons et îles paradisiaques 🏝️ 
         👉 <a href="https://www.guidetothephilippines.ph/articles/what-to-experience/best-things-to-do-palawan" target="_blank">Top activités à Palawan</a>
       </div>
-
-      <img src="https://images.unsplash.com/photo-1602338312299-5e38f3d7a1f5" alt="Bohol Chocolate Hills">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Bohol_Hills%2C_Chocolate_Hills%2C_Philippines.jpg" alt="Bohol – Chocolate Hills" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
       <div>
         <b>Jour 11–14 :</b> Cebu &amp; Bohol – cascades, plongées et nature 🌿 
         👉 <a href="https://www.guidetothephilippines.ph/articles/what-to-experience/bohol-tourist-spots" target="_blank">Que voir à Bohol ?</a> 
         👉 <a href="https://www.moalboaldives.com/" target="_blank">Plongée à Moalboal</a>
       </div>
-
-      <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92" alt="Avion retour">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/RP-C8613_Airbus_A320-214_%28cn_3579%29_Philippine_Airlines._%2814783825563%29.jpg" alt="Philippine Airlines – Airbus A320" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
       <div><b>Jour 15 :</b> Retour ✈️</div>
     </div>
   </section>
@@ -79,49 +177,49 @@
   <section>
     <h2>📸 Galerie</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Plage">
-      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Lagons">
-      <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Requin baleine">
-      <img src="https://images.unsplash.com/photo-1602338312299-5e38f3d7a1f5" alt="Chocolate Hills">
-      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Ville de Manille">
-      <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92" alt="Avion">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/White_Beach_at_Boracay.jpg" alt="Boracay – White Beach" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Twin_Lagoon%2C_Coron%2C_Palawan.jpg" alt="Coron – Twin Lagoon" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Butanding_Whale_Shark_%28Donsol%2C_Sorsogon%29_%28794278440%29.jpg" alt="Requin-baleine – Donsol" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Chocolate_Hills_overview.JPG" alt="Bohol – Chocolate Hills (overview)" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/MANILA_SKYLINE_01.JPG" alt="Manille – skyline" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/RP-C8613_Airbus_A320-214_%28cn_3579%29_Philippine_Airlines._%2814783825563%29.jpg" alt="Philippine Airlines – Airbus A320" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
     </div>
   </section>
 
   <section>
-    <h2>�� Découverte culinaire</h2>
+    <h2>🍽️ Découverte culinaire</h2>
     <p>Impossible de voyager aux Philippines sans goûter aux spécialités locales ! Voici quelques plats typiques que l'on pourra savourer :</p>
     <div class="food-grid">
       <div class="food-item">
-        <img src="https://images.unsplash.com/photo-1617196039897-7b1e1aee3628" alt="Adobo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Filipino_Chicken_Adobo.JPG" alt="Adobo philippin" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
         <div>
           <h3>Adobo</h3>
           <p>Plat national des Philippines : viande (souvent poulet ou porc) mijotée dans du vinaigre, sauce soja, ail et laurier.</p>
         </div>
       </div>
       <div class="food-item">
-        <img src="https://images.unsplash.com/photo-1646232434204-9bfb5d5e78ca" alt="Sinigang">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Sinigang_Tinolang_Manok_Twist_-_sampalok_and_ginger_with_sayote_and_chicken_version._04.jpg" alt="Sinigang" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
         <div>
           <h3>Sinigang</h3>
           <p>Soupe aigre à base de tamarin, légumes et parfois crevettes ou porc. Réconfortante et rafraîchissante.</p>
         </div>
       </div>
       <div class="food-item">
-        <img src="https://images.unsplash.com/photo-1633632721131-418eb2f9f2a2" alt="Lechon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Lechon_in_the_Philippines.jpg" alt="Lechon" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
         <div>
           <h3>Lechon</h3>
           <p>Cochon rôti entier, peau croustillante et chair tendre – plat de fête incontournable aux Philippines.</p>
         </div>
       </div>
       <div class="food-item">
-        <img src="https://images.unsplash.com/photo-1668246823540-14318e403d3c" alt="Halo-halo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Halo-halo_01.jpg" alt="Halo-Halo" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
         <div>
           <h3>Halo-Halo</h3>
           <p>Dessert coloré et rafraîchissant : glace pilée, lait concentré, fruits confits, haricots sucrés et glace violette au taro (ube).</p>
         </div>
       </div>
       <div class="food-item">
-        <img src="https://images.unsplash.com/photo-1625944527222-620c2de91388" alt="Pancit">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Pancit.JPG" alt="Pancit" loading="lazy" decoding="async" onclick="window.open(this.src)" style="cursor:pointer">
         <div>
           <h3>Pancit</h3>
           <p>Nouilles sautées aux légumes, parfois avec crevettes ou poulet. Plat simple et convivial, parfait à partager.</p>
@@ -133,44 +231,44 @@
   <section>
     <h2>❤️ Love Romance in Philippine</h2>
     <p>Les Philippines sont une destination idéale pour un voyage en amoureux. Voici pourquoi :</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div class="romance-grid">
+      <div class="romance-card">
         <h3>🏝️ Plages paradisiaques et isolées</h3>
         <p>Palawan, El Nido, Boracay… sable blanc, eau turquoise, idéal pour se détendre en couple.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🌅 Couchers de soleil romantiques</h3>
         <p>Des spots incroyables pour prendre des photos et profiter de moments intimes.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🤿 Aventures à deux</h3>
         <p>Plongée avec les requins-baleines (sans nourrissage), snorkeling, kayak dans les lagons…</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🏡 Hébergements charmants</h3>
         <p>Resorts, guesthouses ou hôtels boutique avec piscine, vue mer ou plage privée.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🍽️ Gastronomie à partager</h3>
         <p>Découverte des plats typiques philippins (Adobo, Lechon, Halo-Halo…) et moments conviviaux autour d'un repas.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🌿 Nature luxuriante</h3>
         <p>Cascades, Chocolate Hills, rivières, randonnées… parfait pour des souvenirs inoubliables.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>💆‍♀️ Moments de détente et spa</h3>
         <p>Massages sur la plage, resorts avec spa et piscines romantiques.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🎭 Culture locale et festivités</h3>
         <p>Découverte de la musique, danse et traditions locales, idéal pour partager de nouvelles expériences.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>🧘‍♂️ Intimité et tranquillité</h3>
         <p>Beaucoup d'îles sont peu fréquentées, parfait pour un voyage loin de la foule.</p>
       </div>
-      <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="romance-card">
         <h3>👫 Expériences uniques à deux</h3>
         <p>Balades en bateau, snorkelling privé, pique-nique sur des îles désertes, moments magiques à deux.</p>
       </div>
@@ -193,6 +291,26 @@
 
   <footer>
     <p>Notre Trip aux Philippines – Avril 2025 💙</p>
+    <p style="font-size:12px; opacity:0.9; line-height:1.6; margin-top:10px;">
+      Crédits images: via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> — licences
+      <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>,
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Liens sources →
+      <a href="https://commons.wikimedia.org/wiki/File:MANILA_SKYLINE_01.JPG" target="_blank" rel="noopener noreferrer">Manille</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Butanding_Whale_Shark_(Donsol,_Sorsogon)_(794278440).jpg" target="_blank" rel="noopener noreferrer">Donsol</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Island_lagoon_in_Bacuit_Bay,_El_Nido,_Palawan,_Philippines.jpg" target="_blank" rel="noopener noreferrer">El Nido</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Bohol_Hills,_Chocolate_Hills,_Philippines.jpg" target="_blank" rel="noopener noreferrer">Chocolate Hills</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:White_Beach_at_Boracay.jpg" target="_blank" rel="noopener noreferrer">Boracay</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Twin_Lagoon,_Coron,_Palawan.jpg" target="_blank" rel="noopener noreferrer">Twin Lagoon</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Filipino_Chicken_Adobo.JPG" target="_blank" rel="noopener noreferrer">Adobo</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Sinigang_Tinolang_Manok_Twist_-_sampalok_and_ginger_with_sayote_and_chicken_version._04.jpg" target="_blank" rel="noopener noreferrer">Sinigang</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Lechon_in_the_Philippines.jpg" target="_blank" rel="noopener noreferrer">Lechon</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Halo-halo_01.jpg" target="_blank" rel="noopener noreferrer">Halo-Halo</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Pancit.JPG" target="_blank" rel="noopener noreferrer">Pancit</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:RP-C8613_Airbus_A320-214_(cn_3579)_Philippine_Airlines._(14783825563).jpg" target="_blank" rel="noopener noreferrer">Philippine Airlines A320</a>
+    </p>
   </footer>
 </body>
 </html>
